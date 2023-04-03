@@ -1,9 +1,9 @@
-name: Manually Deploy to Heroku
+name: Manually Deploy to Render
 
 on:
   workflow_dispatch:
     branches:
-      - "heroku"
+      - "Render"
 
 jobs:
   deploy:
@@ -12,9 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          render_api_key: ${{secrets.RENDER_API_KEY}}
+          render_app_name: ${{secrets.RENDER_APP_NAME}}
+          render_email: ${{secrets.RENDER_EMAIL}}
           usedocker: true
           docker_heroku_process_type: web
           stack: "container"
